@@ -52,4 +52,6 @@ const FormStyle = styled.form`
     color: white;
   }
 `;
+
+
 export default Search;

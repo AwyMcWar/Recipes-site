@@ -28,18 +28,21 @@ function Recipe() {
         <img src={details.image} alt=""></img>
       </div>
       <Info>
-        <Button
-          className={activeTab === "instructions" ? "active" : ""}
-          onClick={() => setActiveTab("instructions")}
-        >
-          Instructions
-        </Button>
-        <Button
-          className={activeTab === "ingredients" ? "active" : ""}
-          onClick={() => setActiveTab("ingredients")}
-        >
-          Ingredients
-        </Button>
+        <div className="buttons">
+          <Button
+            className={activeTab === "instructions" ? "active" : ""}
+            onClick={() => setActiveTab("instructions")}
+          >
+            Instructions
+          </Button>
+          <Button
+            className={activeTab === "ingredients" ? "active" : ""}
+            onClick={() => setActiveTab("ingredients")}
+          >
+            Ingredients
+          </Button>
+        </div>
+
         {activeTab === "instructions" && (
           <div>
             <h3 dangerouslySetInnerHTML={{ __html: details.summary }}></h3>
@@ -65,22 +68,45 @@ const DetailWrapper = styled.div`
  
 
   .active {
-    background: black;
+    background: linear-gradient(35deg, #494949, #313131);
     color: white;
+    border: 2px solid black;
+   
   }
 
   h2 {
     margin-bottom: 2rem;
+    color: #555353;
+  
+    }
 
+    
+    img{
+      width: 420px;
+      height: 350px;
+      border-radius: 10px;
+    }
+    ul{
+      margin-top: 2rem;
+      font-weight: bold;
+      color: #555353;
+    }
     li {
+
       font-size: 1.2rem:
       line-height: 2.5rem;
 
     }
-    ul{
-      margin-top: 2rem;
-
-    }
+    
+    
+  }
+  h3{
+    font-size: 16px;
+    line-height: 22px;
+    text-align: left;
+    font-weight: thiner;
+   
+    
   }
 `;
 
@@ -100,5 +126,8 @@ const Button = styled.button`
 
 const Info = styled.div`
   margin-left: 10rem;
+  .buttons {
+    display: flex;
+  }
 `;
 export default Recipe;

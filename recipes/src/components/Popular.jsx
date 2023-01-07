@@ -35,8 +35,8 @@ function Popular() {
 
         <Splide
           options={{
-            perPage: 4,
-            arrows: false,
+            perPage: 3,
+            arrows: true,
             pagination: false,
             drag: "free",
             gap: "5rem",
@@ -46,7 +46,7 @@ function Popular() {
             return (
               <SplideSlide key={recipe.id}>
                 <Card>
-                  <Link to={"/recipe" + recipe.id}>
+                  <Link to={"recipe/" + recipe.id}>
                     <p>{recipe.title}</p>
                     <img src={recipe.image} alt={recipe.title}></img>
                     <Gradient />
